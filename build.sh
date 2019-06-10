@@ -18,7 +18,7 @@ curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidi
 sudo yum install nvidia-container-runtime
 
 # make nvidia-container-runtime default
-sudo sed -i "s/\"runtimes\"/default-runtime": "nvidia",\n  \"runtimes\"/" /etc/docker/daemon.json
+sudo sed -i "s/\"runtimes\"/default-runtime\": \"nvidia\",\n  \"runtimes\"/" /etc/docker/daemon.json
 
 # install nvidia-docker2
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
