@@ -2,15 +2,15 @@
 sudo yum groupinstall 'Development Tools'
 
 # download and nvidia drivers
-curl -s -L http://us.download.nvidia.com/tesla/396.26/NVIDIA-Linux-x86_64-396.26.run -z NVIDIA-Linux-x86_64-396.26.run -o NVIDIA-Linux-x86_64-396.26.run -f
-chmod +x NVIDIA-Linux-x86_64-396.26.run 
+curl -s -L http://us.download.nvidia.com/tesla/396.26/NVIDIA-Linux-x86_64-384.183.run -z NVIDIA-Linux-x86_64-384.183.run -o NVIDIA-Linux-x86_64-384.183.run -f
+chmod +x NVIDIA-Linux-x86_64-384.183.run 
 
 # install kernel headers
 sudo yum install kernel-devel-$(uname -r)
 sudo yum install kernel-headers-$(uname -r)
 
 # run driver install (not headless as shown here)
-sudo ./NVIDIA-Linux-x86_64-396.26.run 
+sudo ./NVIDIA-Linux-x86_64-384.183.run 
 
 # install nvidia-container-runtime
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
@@ -26,6 +26,6 @@ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.re
 sudo yum install nvidia-docker2
 
 # clean up
-rm NVIDIA-Linux-x86_64-396.26.run 
+rm NVIDIA-Linux-x86_64-384.183.run 
 sudo yum clean all
 sudo rm -rf /var/cache/yum
