@@ -1,8 +1,8 @@
 # install build tools (gcc needed for nvidia driver install)
-sudo yum groupinstall 'Development Tools'
+sudo yum groupinstall -y 'Development Tools'
 
 # download and nvidia drivers
-curl -s -L http://us.download.nvidia.com/tesla/396.26/NVIDIA-Linux-x86_64-384.183.run -z NVIDIA-Linux-x86_64-384.183.run -o NVIDIA-Linux-x86_64-384.183.run -f
+curl -s -L http://us.download.nvidia.com/tesla/384.183/NVIDIA-Linux-x86_64-384.183.run -z NVIDIA-Linux-x86_64-384.183.run -o NVIDIA-Linux-x86_64-384.183.run -f
 chmod +x NVIDIA-Linux-x86_64-384.183.run 
 
 # install kernel headers
